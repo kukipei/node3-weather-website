@@ -9,7 +9,9 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Request failed. Probably wrong latitude or longitude', undefined)
         } else {
-            let data = body.current.weather_descriptions[0] + ". It is currently " + body.current.temperature + " degreese outide. It fills like " + body.current.feelslike + ". Humidity is " + body.current.humidity
+            let data = body.current.weather_descriptions[0] + ". It is currently " +
+                body.current.temperature + " degreese outide. It fills like " +
+                body.current.feelslike + ". Humidity is " + body.current.humidity + "%."
 
             callback(undefined, data)
         }
